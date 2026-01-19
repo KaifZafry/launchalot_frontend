@@ -1,15 +1,18 @@
 export interface SurveyUIConfig {
-  backgroundImage: string;
+  config: {
+    backgroundImage: string;
 
-  poweredBy: {
-    logo: string;
-  };
+    poweredBy: {
+      logo: string;
+    };
 
-  disclaimer: {
-    text: string;
-  };
+    disclaimer: {
+      text: string;
+    };
 
-  checkbox: {
-    text: string;
-  };
+    checkbox: {
+      text: string;
+    };
+  }
+
 }

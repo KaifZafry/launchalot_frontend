@@ -60,7 +60,7 @@ function Disclaimer({ onClose }: DisclaimerProps) {
     }
 
     if (uiConfig) {
-      // console.log("UI Config data:", uiConfig);
+      // console.log("UI Config data:", uiConfig?.config?.disclaimer);
     }
   }, [uiConfig, isLoading, error]);
 
@@ -76,7 +76,7 @@ function Disclaimer({ onClose }: DisclaimerProps) {
     <div
       style={{
         backgroundImage:
-          `radial-gradient(ellipse at bottom, #2a95c4b5, #0d1b2af2), url(${uiConfig?.backgroundImage})`,
+          `radial-gradient(ellipse at bottom, #2a95c4b5, #0d1b2af2), url(${uiConfig?.config?.backgroundImage})`,
         backgroundSize: "cover, cover",
         backgroundPosition: "center, center",
         backgroundRepeat: "no-repeat, no-repeat",
@@ -87,7 +87,7 @@ function Disclaimer({ onClose }: DisclaimerProps) {
       <div className=" rounded-lg p-6 max-w-4xl w-full mx-4 shadow-lg bg-[#fff]/80">
         <h2 className="text-lg font-bold mb-4 text-gray-900">DISCLAIMER</h2>
         <p className="text-sm text-gray-800 mb-4 leading-snug">
-          {uiConfig?.disclaimer.text}
+          {uiConfig?.config?.disclaimer?.text}
         </p>
         <label className="flex items-center mb-4 space-x-2">
           <input
@@ -96,7 +96,7 @@ function Disclaimer({ onClose }: DisclaimerProps) {
             onChange={(e) => setChecked(e.target.checked)}
             className="w-4 h-4"
           />
-          <span className="text-sm text-gray-800">{uiConfig?.checkbox.text} </span>
+          <span className="text-sm text-gray-800">{uiConfig?.config?.checkbox?.text} </span>
         </label>
         <div className="flex justify-end space-x-2">
           <button
@@ -111,7 +111,7 @@ function Disclaimer({ onClose }: DisclaimerProps) {
         <p className="text-white text-sm opacity-80">
           Powered by&nbsp;
           <img
-            src={uiConfig?.poweredBy.logo}
+            src={uiConfig?.config?.poweredBy?.logo}
             alt="logo"
             className="inline-block h-12 align-middle"
           />
@@ -341,7 +341,7 @@ export default function PublicSurveyPage() {
       className="relative min-h-screen overflow-hidden"
       style={{
         backgroundImage:
-          `radial-gradient(ellipse at bottom, #2a95c4b5, #0d1b2af2), url(${uiConfig?.backgroundImage})`,
+          `radial-gradient(ellipse at bottom, #2a95c4b5, #0d1b2af2), url(${uiConfig?.config?.backgroundImage})`,
         backgroundSize: "cover, cover",
         backgroundPosition: "center, center",
         backgroundRepeat: "no-repeat, no-repeat",
@@ -558,7 +558,7 @@ export default function PublicSurveyPage() {
           <span className="text-sm">Powered by</span>
 
           <img
-            src={uiConfig?.poweredBy.logo ?? ""}
+            src={uiConfig?.config?.poweredBy.logo ?? ""}
             alt="Launchalot"
             className="h-14 w-auto object-contain"
           />
@@ -570,8 +570,8 @@ export default function PublicSurveyPage() {
           logos={logos}
           companyName={data.companyName}
           onDownload={handleDownloadPdf}
-          bgimg={uiConfig?.backgroundImage ?? ""}
-          footerlogo={uiConfig?.poweredBy.logo ?? ""}
+          bgimg={uiConfig?.config?.backgroundImage ?? ""}
+          footerlogo={uiConfig?.config?.poweredBy.logo ?? ""}
         />
       )}
     </div>
